@@ -1,0 +1,32 @@
+/* NEON//ANIME — Gamepad Viewer edit stylesheet
+   Animated cyan/violet cyberpunk glow for the stock Gamepad Viewer controller.
+   Use with Gamepad Viewer’s editcss= parameter.
+*/
+
+@keyframes neonPulse {
+  0%, 100% { filter: drop-shadow(0 0 3px rgba(0, 220, 255, .45)) saturate(1.05); }
+  50% { filter: drop-shadow(0 0 10px rgba(190, 55, 255, .75)) saturate(1.35); }
+}
+@keyframes neonHue {
+  0%, 100% { box-shadow: 0 0 5px rgba(0,220,255,.45), inset 0 0 4px rgba(0,220,255,.25); }
+  50% { box-shadow: 0 0 9px rgba(230,45,255,.75), inset 0 0 6px rgba(230,45,255,.35); }
+}
+
+/* Animated neon aura around the controller. */
+.edit {
+  animation: neonPulse 3.2s ease-in-out infinite;
+}
+
+/* Bright cyan/violet feedback while controls are pressed. */
+.edit .button.pressed,
+.edit .trigger.pressed,
+.edit .bumper.pressed,
+.edit .stick.pressed,
+.edit .face.pressed,
+.edit .back.pressed,
+.edit .start.pressed {
+  filter: brightness(1.55) saturate(1.35) drop-shadow(0 0 6px rgba(0, 225, 255, .95));
+  animation: neonHue .9s ease-in-out infinite;
+}
+
+/* Stock controller geometry and input positions remain unchanged. */
