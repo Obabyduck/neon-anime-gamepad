@@ -1,6 +1,7 @@
 /* NEON//ANIME — Gamepad Viewer edit stylesheet
-   Animated cyan/violet cyberpunk glow for the stock Gamepad Viewer controller.
-   Use with Gamepad Viewer’s editcss= parameter.
+   Uses the externally hosted “Neon Siren” animated GIF as a backdrop.
+   Original GIF: https://gifs.alphacoders.com/gifs/view/207827
+   The source listing marks it for private, personal use.
 */
 
 @keyframes neonPulse {
@@ -12,8 +13,13 @@
   50% { box-shadow: 0 0 9px rgba(230,45,255,.75), inset 0 0 6px rgba(230,45,255,.35); }
 }
 
-/* Animated neon aura around the controller. */
+/* Animated GIF backdrop behind the controller artwork. */
 .edit {
+  position: relative;
+  background-image: url("https://giffiles.alphacoders.com/207/207827.gif");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
   animation: neonPulse 3.2s ease-in-out infinite;
 }
 
